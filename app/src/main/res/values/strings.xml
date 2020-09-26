@@ -4,11 +4,12 @@
     <string name="your_last_name">Apellidos</string>
     <string name="gender">Género</string>
     <string name="date">Nacimiento</string>
+    <string name="select_date">Selecciona una fecha</string>
     <string name="like_programming">¿Le gusta programar?</string>
     <string name="yes">Sí</string>
     <string name="no">No</string>
     <string name="languages">Lenguajes</string>
-    <string name="clear">Limpiar</string>
+    <string name="clean">Limpiar</string>
     <string name="send">Enviar</string>
     <string-array name="genders">
         <item>Masculino</item>

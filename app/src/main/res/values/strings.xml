@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">MyFirstApp</string>
+    <string name="app_name">Mi Primera Aplicación</string>
+    <string name="your_name">Nombres</string>
+    <string name="your_last_name">Apellidos</string>
+    <string name="gender">Género</string>
+    <string name="date">Nacimiento</string>
+    <string name="like_programming">¿Le gusta programar?</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+    <string name="languages">Lenguajes</string>
+    <string name="clear">Limpiar</string>
+    <string name="send">Enviar</string>
+    <string-array name="genders">
+        <item>Masculino</item>
+        <item>Femenino</item>
+    </string-array>
 </resources>

@@ -1,9 +1,12 @@
 package com.pucmm.myfirstapp;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,11 +14,14 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private EditText txtName, txtLastName;
@@ -29,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout lyProgramming;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,8 +113,25 @@ public class MainActivity extends AppCompatActivity {
             }
 
             // If everything goes well...
-            if(!error){
+            if (!error) {
+                Intent intent = new Intent(view.getContext(), ResultActivity.class);
+                intent.putExtra("name", txtName.getText().toString());
+                intent.putExtra("lastName", txtLastName.getText().toString());
+                intent.putExtra("gender", spnGender.getSelectedItem().toString());
+                intent.putExtra("date", txtDate.getText().toString());
+                intent.putExtra("likes", ((RadioButton) findViewById(R.id.yes_radio_button)).isChecked());
 
+                List<String> langList = new ArrayList<>();
+                if (chkJava.isChecked()) langList.add("Java");
+                if (chkPython.isChecked()) langList.add("Python");
+                if (chkJavaScript.isChecked()) langList.add("JavaScript");
+                if (chkGo.isChecked()) langList.add("Go");
+                if (chkC.isChecked()) langList.add("C / C++");
+                if (chkCSharp.isChecked()) langList.add("C#");
+
+                intent.putExtra("languages", String.join(", ", langList));
+
+                startActivity(intent);
             }
         });
     }

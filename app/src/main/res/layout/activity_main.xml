@@ -134,7 +134,6 @@
                 android:layout_gravity="center"
                 android:layout_marginRight="12dp"
                 android:layout_weight="1"
-                android:clickable="false"
                 android:text="@string/languages"
                 android:textSize="18sp" />
 
